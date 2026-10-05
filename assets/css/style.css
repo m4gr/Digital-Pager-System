@@ -1,0 +1,499 @@
+/* ==========================================================================
+   Webix Queue - Styles
+   ========================================================================== */
+
+:root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --primary-soft: #EFF6FF;
+    --text: #0F172A;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --bg: #F8FAFC;
+    --white: #FFFFFF;
+
+    --success: #16A34A;
+    --success-soft: #DCFCE7;
+    --warning: #D97706;
+    --warning-soft: #FEF3C7;
+    --info: #0EA5E9;
+    --info-soft: #E0F2FE;
+    --muted-badge: #94A3B8;
+    --muted-soft: #F1F5F9;
+
+    --radius: 14px;
+    --radius-sm: 10px;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .04);
+    --shadow: 0 4px 16px rgba(15, 23, 42, .06);
+    --shadow-lg: 0 20px 45px rgba(15, 23, 42, .18);
+
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.container-narrow { max-width: 520px; }
+
+/* ---------------- Header ---------------- */
+.app-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.brand-name { color: var(--text); }
+
+.header-nav { display: flex; gap: 6px; }
+.nav-link {
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: background .15s, color .15s;
+}
+.nav-link:hover { background: var(--muted-soft); color: var(--text); }
+.nav-link.active { background: var(--primary-soft); color: var(--primary); font-weight: 600; }
+
+/* ---------------- Cards ---------------- */
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 22px;
+    margin: 20px 0;
+}
+.card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+.card-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0 0 18px;
+}
+
+/* ---------------- Forms ---------------- */
+.field { margin-bottom: 14px; display: flex; flex-direction: column; }
+.field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+.field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+.hint { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+.center-hint { text-align: center; }
+.hint code {
+    background: var(--muted-soft);
+    padding: 1px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.call-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+.stack-form .field { margin-bottom: 16px; }
+
+/* ---------------- Buttons ---------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, transform .05s, color .15s;
+    white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--primary-dark); }
+
+.btn-ghost {
+    background: var(--white);
+    border-color: var(--border);
+    color: var(--text);
+}
+.btn-ghost:hover { background: var(--muted-soft); }
+
+.btn-block { width: 100%; }
+
+/* ---------------- Orders list ---------------- */
+.orders-list { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    transition: background .15s, border-color .15s;
+}
+.order-row:hover { background: #FCFDFF; }
+.order-main { display: flex; align-items: center; gap: 10px; }
+.order-number { font-weight: 700; font-size: 16px; letter-spacing: .3px; }
+.order-meta { font-size: 12px; }
+.meta-item { color: var(--text-muted); }
+.meta-on { color: var(--success); font-weight: 600; }
+.meta-off { color: var(--text-muted); }
+
+/* ---------------- Badges ---------------- */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-waiting   { background: var(--muted-soft); color: var(--muted-badge); }
+.badge-preparing { background: var(--info-soft); color: var(--info); }
+.badge-ready     { background: var(--success-soft); color: var(--success); }
+.badge-completed { background: var(--warning-soft); color: var(--warning); }
+
+/* ---------------- Empty state ---------------- */
+.empty-state {
+    text-align: center;
+    padding: 36px 12px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ---------------- Toast ---------------- */
+.toast-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    pointer-events: none;
+}
+.toast {
+    background: #0F172A;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: toastIn .2s ease;
+    pointer-events: auto;
+}
+.toast.toast-success { background: #14532D; }
+.toast.toast-error   { background: #7F1D1D; }
+.toast.toast-info    { background: #0F172A; }
+@keyframes toastIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- Customer status ---------------- */
+.customer-body { background: var(--bg); }
+.status-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.status-label { color: var(--text-muted); font-size: 14px; }
+.status-order { font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+
+.status-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 128px;
+    margin: 12px 0 8px;
+}
+.status-icon {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--primary-soft);
+    color: var(--primary);
+    z-index: 2;
+}
+.pulse-ring {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, .18);
+    animation: pulse 2s ease-out infinite;
+    z-index: 1;
+}
+@keyframes pulse {
+    0%   { transform: scale(.85); opacity: .8; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+.status-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 4px 0 6px;
+}
+.status-desc {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0 0 18px;
+}
+
+.status-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+.dot-live {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, .15);
+    animation: livePulse 1.6s ease-in-out infinite;
+}
+@keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .4; }
+}
+
+/* Status variants */
+.status-view-ready .status-icon { background: var(--success-soft); color: var(--success); }
+.status-view-ready .pulse-ring { background: rgba(22, 163, 74, .22); }
+.status-view-ready .status-title { color: var(--success); }
+
+.status-view-completed .status-icon { background: var(--warning-soft); color: var(--warning); }
+.status-view-completed .pulse-ring { display: none; }
+
+/* ---------------- Modal ---------------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .55);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    z-index: 200;
+    animation: fadeIn .18s ease;
+}
+.modal-overlay.hidden { display: none; }
+
+.modal {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    animation: modalIn .22s cubic-bezier(.2, .8, .2, 1);
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(10px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.ready-anim {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--success-soft);
+    color: var(--success);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    animation: popIn .35s cubic-bezier(.2, 1.4, .4, 1);
+}
+@keyframes popIn {
+    0%   { transform: scale(.4); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.modal-title { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
+.modal-sub { font-size: 16px; font-weight: 600; color: var(--primary); margin: 0 0 6px; }
+.modal-desc { font-size: 14px; color: var(--text-muted); margin: 0 0 18px; }
+
+/* ---------------- QR ---------------- */
+.qr-preview {
+    display: grid;
+    place-items: center;
+    margin: 18px 0 8px;
+}
+.qr-box {
+    background: var(--white);
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    min-width: 252px;
+    min-height: 252px;
+    display: grid;
+    place-items: center;
+}
+.qr-box canvas, .qr-box img { display: block; }
+
+.loading-spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------------- Helpers ---------------- */
+.hidden { display: none !important; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 560px) {
+    .call-form { grid-template-columns: 1fr; }
+    .header-nav { gap: 2px; }
+    .nav-link { padding: 6px 10px; font-size: 13px; }
+    .card { padding: 18px; }
+    .status-order { font-size: 22px; }
+    .modal { padding: 22px 18px; }
+}
+
+/* ==========================================================================
+   Webix Queue - Sound activation additions
+   ========================================================================== */
+
+/* Icon inside modal (sound activation) */
+.modal-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    animation: popIn .35s cubic-bezier(.2, 1.4, .4, 1);
+}
+
+/* Small secondary action button in status view */
+.test-btn {
+    margin-top: 6px;
+    gap: 8px;
+    font-weight: 600;
+}
+
+/* Success check mark shown briefly after activation */
+.modal-icon.success {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+/* Strong ready-state animation on the status card */
+.status-view-ready .status-icon {
+    animation: readyPulse 1.1s ease-in-out infinite;
+}
+@keyframes readyPulse {
+    0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(22, 163, 74, .45); }
+    70%  { transform: scale(1.06); box-shadow: 0 0 0 22px rgba(22, 163, 74, 0); }
+    100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+/* Ready banner glow behind status head */
+.status-view-ready .status-head {
+    animation: readyGlow 1.4s ease-in-out infinite;
+}
+@keyframes readyGlow {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .75; }
+}
+
